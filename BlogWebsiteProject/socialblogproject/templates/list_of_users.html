@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+	{% for user in userlist %}
+		<div class="jumbotron border border-primary " style="background-color: #C9E2E0;">
+		<div class="card text-center border border-primary" >
+		<div class="card-header">
+		<h1 class="text-dark">Registration #{{user.id}}</h1>
+		<h1>I am <strong class="text-danger">{{user.username}}</strong></h1>
+		<img align = 'center' src="{{url_for('static',filename = 'profile_pics/' + user.profile_image)}}">
+		<p>{{user.email}}</p>
+		<br><br>
+		<h1><span class="badge badge-pill badge-success"><a href="{{url_for('users.user_posts', username = user.username)}}">Link to my profile</a></span></h1>
+		</div>
+		</div>
+		</div>
+	{% endfor %}
+
+</div>
+
+
+{% endblock %}

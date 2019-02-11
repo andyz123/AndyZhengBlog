@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+	<div class='container'>
+		<div class="jumbotron border border-primary " style="background-color: #C9E2E0;">
+			<div align="center">
+				<h1><i>Welcome to the profile page for <span class="badge badge-pill badge-success">{{user.username.upper()}}</span>!</i></h1>
+				<img src="{{url_for('static', filename='profile_pics/' + user.profile_image)}}">
+				<br><br>
+				<h5>Below you can see all posts by the user: </h5>
+			</div>
+		</div>
+	
+		
+		{% for post in blog_posts.items %}
+		<div class="jumbotron border border-primary" style="background-color: #C9E2E0;">
+		<div class="card text-center border border-primary" >
+			 <div class="card-header">
+    			Post #{{post.id}} 
+    			
+  			</div>
+			<div class="card-body" >
+				<h2><a class="card-title" href="{{url_for('blog_posts.blog_post', blog_post_id = post.id)}}">{{post.title}}</a></h2>
+				Written by:  <a href="{{url_for('users.user_posts', username = post.author.username)}}">{{post.author.username.upper()}}</a>
+				<p>Published on: {{post.date.strftime('%m-%d-20%y')}}</p>
+				<a class = 'btn btn-primary' href="{{url_for('blog_posts.blog_post', blog_post_id = post.id)}}">Read here!</a>
+			
+			</div>
+		</div>
+		</div>
+		{% endfor %}
+	
+		</div>
+
+<nav aria-label = 'Page Navigation example' style="background-color: #C4EEFF;">
+	<ul class="pagination justify-content-center pagination-lg">
+		{% for page_num in blog_posts.iter_pages(left_edge=1, right_edge= 1, left_current=1, right_current = 2) %}
+			{% if blog_posts.page == page_num %}
+			<li class="page-item disabled">
+				<a href="{{url_for('users.user_posts', username = user.username, page = page_num)}}" class="page-link">{{ page_num }}</a>
+			</li>
+			{% else %}
+			<li class="page-item">
+				<a href="{{url_for('users.user_posts', username = user.username, page = page_num)}}" class="page-link">{{ page_num }}</a>
+			</li>
+			{% endif %}
+		
+		{% endfor %}
+	</ul>
+	
+</nav>
+
+{% endblock%}

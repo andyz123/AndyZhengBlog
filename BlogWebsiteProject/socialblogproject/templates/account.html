@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+	<div class='container'>
+	<div class="jumbotron border border-primary" style="background-color: #DAE9E4;" >
+		<div align='center'>
+			<h1><i>Welcome to your account page, <span class="badge badge-pill badge-success">{{current_user.username.upper()}}</span>!</i></h1>
+			<img align = 'center' src="{{url_for('static',filename = 'profile_pics/' + current_user.profile_image)}}">
+			<br><br>
+			<h5>Below, you may update your settings:</h5>
+		</div>
+	</div>
+	</div>
+	<div class='container'>
+		<div class="jumbotron border border-primary" style="background-color: #DAE9E4;">
+		<form method = 'POST' action="" enctype="multipart/form-data">
+			{{form.hidden_tag()}}
+			<div class="form-group">
+				{{form.username.label(class='form-control-label')}}
+				{{form.username(class='form-control form-control-lg')}}
+			</div>
+			
+			<div class="form-group">
+				{{form.email.label(class='form-control-label')}}
+				{{form.email(class='form-control form-control-lg')}}
+			</div>
+
+			<div class="form-group">
+				{{form.picture.label(class='form-control-label')}}
+				{{form.picture(class='form-control form-control-lg')}}
+			</div>
+
+			<div class="form-group">
+				{{form.submit(class = 'btn btn-primary')}}
+			</div>
+		</div>	
+	</div>
+
+{% endblock %}
