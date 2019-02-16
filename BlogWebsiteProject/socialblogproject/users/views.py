@@ -84,8 +84,7 @@ def user_posts(username):
 
 @users.route('/list_of_users')
 def list_of_users():
-	# This method of retrieving User attribute is a bit awkward. I hope to one day be able to find a better solution.
-	# Right now, this method I use append all User attributes to a list. There may be an inbuilt function I do not know about.
+	# This method I use append all User attributes to a list. There may be an inbuilt function I do not know about.
 	userlist = []
 	count = 1
 	while User.query.filter_by(id=count).first() is not None:

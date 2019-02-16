@@ -1,7 +1,7 @@
 from socialblogproject import app
 from datetime import datetime, timedelta
 
-# Allows datetime to be used in templates.
+# Creates datetime instances to be used in 'index.html' template.
 @app.context_processor
 def inject_now():
 	return {'now': datetime.utcnow(), 'time':timedelta(days=2)} 
