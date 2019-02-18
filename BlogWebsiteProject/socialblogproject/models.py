@@ -7,6 +7,7 @@ from datetime import datetime
 def load_user(user_id):
 	return User.query.get(user_id)
 
+# The User object. This is created after filling the registration form.
 class User(db.Model, UserMixin):
 	
 	__tablename__ = 'users'
@@ -29,6 +30,7 @@ class User(db.Model, UserMixin):
 	def __repr__(self):
 		return f'Username {self.username}'
 
+# The blog post object. This is created after filling out a blog post form.
 class BlogPost(db.Model):
 	
 	users = db.relationship(User)
