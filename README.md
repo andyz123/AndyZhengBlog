@@ -1,5 +1,5 @@
 # Introduction
-This is a blog site developed using the Flask framework and deployed to Heroku under the domain http://andy-blog-site.herokuapp.com. You're able to create an account, post messages, upload a profile picture and more.
+This is a blog site developed using the Flask framework and deployed to Heroku under the domain http://andyzhengblog.herokuapp.com. You're able to create an account, post messages, upload a profile picture and more.
 - You do not need (and I recommend you do not) to use a legitimate email address to register in order to test the site. It just has to pass the email check (something@something.com)
 
 # Features
