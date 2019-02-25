@@ -2,7 +2,7 @@
 {% block content %}
 <body style="background-image: linear-gradient(to bottom right, white,black);">
 	
-	<div class = 'jumbotron border border-primary' style="background-color: #C4EEFF; background-image: url('static/pics/blogimage.jpg'); background-size: 100% 100vh; background-repeat: no-repeat;">
+	<div class = 'jumbotron border border-primary' style="background-image: url('static/pics/blogimage.jpg'); background-size: 100% 100vh; background-repeat: no-repeat;">
 		<div align="center" style="color:rgba(248, 247, 246, 0.9); font-family: 'Garamond'; ">
 		{% if current_user.is_authenticated %}
 		<h1>Welcome to the Blog, {{current_user.username}}!</h1>
@@ -24,26 +24,27 @@
 	<div class = 'container' >
 		
 		{% for post in blog_posts.items %}
-		<div class="jumbotron" style="background-image: linear-gradient(to bottom right, white,#666699);">
+		<div class="jumbotron" style="background-image: linear-gradient(to bottom right, white,#669999);">
 		<div class="card text-center">
-			 <div class="card-header  " >
+			 <div class="card-header">
     				<strong>Post #{{post.id}}</strong> 
     				{% if post.date + time > now %}
     				<span class="badge badge-success">New!</span>
     				{% endif %}
-    				<h4><a class="card-title" href="{{url_for('blog_posts.blog_post', blog_post_id = post.id)}}">{{post.title}}
+    				<h4 style="font-family: garamond;"><a class="card-title" href="{{url_for('blog_posts.blog_post', blog_post_id = post.id)}}">{{post.title}}
     				</a></h4>
   			</div>
 			<div class="card-body" >
 				
 				Written by: <a href="{{url_for('users.user_posts', username = post.author.username)}}">{{post.author.username.upper()}}</a>
-				<p>Published on: <a href="{{url_for('blog_posts.blog_post_by_date', blog_post_id = post.id)}}">{{post.date.strftime('%m-%d-20%y')}}</a></p>
-				{% if post.text|length >= 13 %}
-				<p>{{post.text[:13]}}...</p>
-				<a class = 'btn btn-primary' href="{{url_for('blog_posts.blog_post', blog_post_id = post.id)}}">Read the full post here!</a>
+				<h6>Published on: <a href="{{url_for('blog_posts.blog_post_by_date', blog_post_id = post.id)}}">{{post.date.strftime('%m-%d-20%y')}}</a></h6>
+				<br>
+				{% if post.text|length > 50 %}
+				<h4 style="font-family: garamond;">{{post.text[:50]}} ...</h4>
+				<a class = 'btn btn-primary' href="{{url_for('blog_posts.blog_post', blog_post_id = post.id)}}">Continue reading →</a>
 				{% else %}
-				<p>{{post.text}}</p>
-				<a class = 'btn btn-primary' href="{{url_for('blog_posts.blog_post', blog_post_id = post.id)}}">Read here!</a>
+				<h4 style="font-family: garamond;">{{post.text}}</h4>
+				<a class = 'btn btn-primary' href="{{url_for('blog_posts.blog_post', blog_post_id = post.id)}}">Read →</a>
 				{% endif %}
 		</div>
 		</div>
@@ -51,7 +52,7 @@
 		{% endfor %}
 	</div>
 		
-<nav aria-label = 'Page navigation example' style="background-color: gray;">
+<nav aria-label = 'Page navigation example' style="background-image: linear-gradient(to bottom right, white,black);">
 	<ul class="pagination justify-content-center pagination-lg" >
 		{% for page_num in blog_posts.iter_pages() %}
 			{% if blog_posts.page == page_num %}

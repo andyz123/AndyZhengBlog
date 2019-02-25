@@ -42,9 +42,6 @@
 		</li>
 		{% endif %}
 		
-		<li class ='nav-link'>
-			<a href="{{url_for('users.list_of_users')}}">List of Users</a>
-		</li>
 		<li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Carousel
@@ -56,19 +53,20 @@
 			<a class="dropdown-item" href="{{url_for('core.nature')}}">Nature</a>
 			<div class="dropdown-divider"></div>
 		
-			<a class="dropdown-item" href="{{url_for('core.audiogear')}}">Audio Gear</a>
+			<a class="dropdown-item" href="{{url_for('core.audiogear')}}">Headphones</a>
 			<div class="dropdown-divider"></div>
 
 			<a class="dropdown-item" href="{{url_for('core.technology')}}">Technology</a>
 			<div class="dropdown-divider"></div>
 
 			<a class="dropdown-item" href="{{url_for('core.goat')}}">GOAT</a>
-		
+		<li class ='nav-link'>
+			<a href="{{url_for('users.list_of_users')}}">List of Users</a>
+		</li>
 	</ul>
 	</nav>
-	<!-- <br><br>
-	<br><br> -->
-<div style='padding-top: 65px'>
+	
+<div style='padding-top: 65px' >
 
 	{% block content %}
 
