@@ -11,7 +11,7 @@ def add_profile_pic(pic_upload, username):
 
 	filepath = os.path.join(current_app.root_path, 'static\profile_pics', storage_filename)
 
-	output_size = (1080, 1080)
+	output_size = (720, 720)
 
 	pic = Image.open(pic_upload)
 	pic.thumbnail(output_size)
