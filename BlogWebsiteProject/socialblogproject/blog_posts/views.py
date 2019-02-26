@@ -1,4 +1,4 @@
-from flask import render_template, url_for, flash, request, redirect, Blueprint
+from flask import render_template, url_for, flash, request, redirect, Blueprint, abort
 from flask_login import current_user, login_required
 from socialblogproject import db
 from socialblogproject.models import BlogPost
@@ -43,7 +43,7 @@ def blog_post_by_date(blog_post_id):
 @login_required
 def update(blog_post_id):
 	blog_post = BlogPost.query.get_or_404(blog_post_id)
-	if blog_post.author != current_user:
+	if blog_post.author != current_user and current_user.id != 1:
 		abort(403)
 
 	form = BlogPostForm()
@@ -68,7 +68,7 @@ def update(blog_post_id):
 def delete_post(blog_post_id):
 
 	blog_post = BlogPost.query.get_or_404(blog_post_id)
-	if blog_post.author != current_user:
+	if blog_post.author != current_user and current_user.id != 1:
 		abort(403)
 
 	db.session.delete(blog_post)

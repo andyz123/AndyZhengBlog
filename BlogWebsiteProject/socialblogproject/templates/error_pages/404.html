@@ -1,9 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
-		<div class = 'jumbotron'>
-			
-			<img src="static/pics/404error.jpg" class="img-fluid">
-			<h1>I'm sorry 😢</h1>
-		</div>
+		<body background="static/pics/404error.jpg" style="background-size: 100% 100vh;" >
+			<br><br>
+		<h1 align="center" style="font-size: 5vw; font-family: 'Garamond'; " >
+			404 Not Found 😢
+			<p style="font-size: 5vw;"><a href="{{url_for('core.index')}}"><button type="button" class='btn btn-primary'>Return home!</button></a></p>
+		</h1>
+
+		
 
 {% endblock %}

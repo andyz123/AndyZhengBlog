@@ -14,9 +14,8 @@
 		<br><br>
 		<h4>{{post.text}}</h4>
 		<br><br>
-		{% if post.author == current_user %}
+		{% if post.author == current_user or current_user.id == 1 %}
 		<div>
-			<!-- <button type = 'button' class='btn btn-primary' href="{{url_for('blog_posts.update',blog_post_id = post.id)}}">Update</a> -->
 			<a href="{{url_for('blog_posts.update',blog_post_id = post.id)}}" class="btn btn-primary" role='button'>Update</a>
 			<button type = 'button' class='btn btn-danger' data-toggle='modal' data-target = '#delete_modal'>Delete</button>
 		</div>

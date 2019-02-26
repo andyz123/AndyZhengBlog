@@ -6,6 +6,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<title></title>
 </head>
 <body>
@@ -53,13 +54,14 @@
 			<a class="dropdown-item" href="{{url_for('core.nature')}}">Nature</a>
 			<div class="dropdown-divider"></div>
 		
-			<a class="dropdown-item" href="{{url_for('core.audiogear')}}">Headphones</a>
+			<a class="dropdown-item" href="{{url_for('core.headphones')}}">Headphones</a>
 			<div class="dropdown-divider"></div>
 
 			<a class="dropdown-item" href="{{url_for('core.technology')}}">Technology</a>
+			{% if current_user.is_authenticated %}
 			<div class="dropdown-divider"></div>
-
 			<a class="dropdown-item" href="{{url_for('core.goat')}}">GOAT</a>
+			{% endif %}
 		<li class ='nav-link'>
 			<a href="{{url_for('users.list_of_users')}}">List of Users</a>
 		</li>
@@ -73,5 +75,7 @@
 	{% endblock %}
 
 </div>
+
+
 </body>
 </html>

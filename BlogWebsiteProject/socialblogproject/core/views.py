@@ -21,9 +21,9 @@ def about():
 def technology():
 	return render_template('technology.html')
 
-@core.route('/audiogear')
-def audiogear():
-	return render_template('audiogear.html')
+@core.route('/headphones')
+def headphones():
+	return render_template('headphones.html')
 
 @core.route('/animals')
 def animals():
