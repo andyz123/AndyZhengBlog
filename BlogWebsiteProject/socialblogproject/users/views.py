@@ -1,4 +1,4 @@
-from flask import render_template, url_for, flash, redirect, request, Blueprint
+from flask import render_template, url_for, flash, redirect, request, Blueprint, abort
 from flask_login import login_user, current_user, logout_user, login_required
 from socialblogproject import db
 from socialblogproject.models import User, BlogPost
@@ -25,22 +25,24 @@ def register():
 
 		db.session.add(user)
 		db.session.commit()
-		flash('You have registered!')
 		return redirect(url_for('users.login'))
-
+	else:
+		flash('Incomplete or incorrect fields. Please double check.')
 	return render_template('register.html', form = form)
 
 @users.route('/login', methods = ['GET', 'POST'])
 def login():
 
 	form = LoginForm()
-
+	
 	if form.validate_on_submit():
 
 		user = User.query.filter_by(email=form.email.data).first()
-		if user.check_password(form.password.data) and user is not None:
+
+		if user is None:
+			flash('Email does not exist in our database.')
+		elif user.check_password(form.password.data):
 			login_user(user)
-			flash('You are logged in!')
 
 			next = request.args.get('next')
 
@@ -48,6 +50,8 @@ def login():
 				next = url_for('core.index')
 
 			return redirect(next)
+		else:
+			flash('Invalid Email or Password. Please double check.')
 	return render_template('login.html', form= form)
 
 @users.route('/account', methods = ['GET', 'POST'])
@@ -64,7 +68,6 @@ def account():
 		current_user.username = form.username.data
 		current_user.email = form.email.data
 		db.session.commit()
-		flash('User Acccount Updated!')
 		return redirect(url_for('users.account'))
 
 	elif request.method == 'GET':

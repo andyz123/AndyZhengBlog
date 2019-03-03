@@ -1,8 +1,24 @@
 {% extends 'base.html' %}
 {% block content %}
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <div class="alert alert-primary alert-dismissible fade show" role="alert">
+  <strong>{{message}}</strong> 
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
 <body style="background-image: linear-gradient(to bottom right, white,#669999);">
 	<div class = 'container'>
 	<div class="jumbotron" style="background-color: #F0FAF1;">
+
 	<form method='POST'>
 		{{ form.hidden_tag() }}
 		<div class="form-group">
@@ -18,7 +34,6 @@
 		<div class="form-group">
 		{{ form.submit(class='btn btn-outline-info') }}
 		</div>
-	
 	</form>
 	</div>
 	</div>
