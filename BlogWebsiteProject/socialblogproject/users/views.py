@@ -16,7 +16,6 @@ def logout():
 def register():
 
 	form = RegistrationForm()
-
 	if form.validate_on_submit():
 		user = User(email=form.email.data,
 					username = form.username.data,
@@ -26,8 +25,7 @@ def register():
 		db.session.add(user)
 		db.session.commit()
 		return redirect(url_for('users.login'))
-	else:
-		flash('Incomplete or incorrect fields. Please double check.')
+	
 	return render_template('register.html', form = form)
 
 @users.route('/login', methods = ['GET', 'POST'])
