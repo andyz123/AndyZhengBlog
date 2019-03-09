@@ -11,7 +11,7 @@
 	<title>Andy's Personal Blog</title>
 </head>
 <body>
-	<nav class="navbar fixed-top navbar-light"  id="nav1" >
+	<nav class="navbar fixed-top navbar-light"  id="nav1">
 		<li class ='nav-link'>
 			<a href="{{url_for('core.index')}}">
 				<img src="/static/pics/home.png" width="30" height="30" class="d-inline-block align-top" alt=""><b><font color ='black'> Home</font></b></a>
@@ -26,29 +26,37 @@
 		
 		{% if current_user.is_authenticated %}
 		<li class= 'nav-link'>
-			<a href="{{url_for('users.logout')}}">Log Out</a>
-		</li>
-		<li class= 'nav-link'>
-			<a href="{{url_for('users.account')}}">Account (<i>Hello, {{current_user.username}}!</i>)</a>
-		</li>
-		<li class= 'nav-link'>
 			<a href="{{url_for('blog_posts.create_post')}}">Create Post</a>
 		</li>
+		<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="account" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Account (<i>Hello, {{current_user.username}}!</i>)</a>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="account">
+			<a class="dropdown-item" href="{{url_for('users.account')}}">Account Settings</a>
+			<div class="dropdown-divider"></div>
+		
+			<a class="dropdown-item" href="{{url_for('users.logout')}}">Sign Out</a>
 
 		{% else %}
-		<li class= 'nav-link'>
-			<a href="{{url_for('users.login')}}">Log In</a>
-		</li>
-		<li class= 'nav-link'>
-			<a href="{{url_for('users.register')}}">Register</a>
-		</li>
+		<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="signin" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Sign In
+        </a>
+        <div class="dropdown-menu" aria-labelledby="signin">
+			<a class="dropdown-item" href="{{url_for('users.login')}}">Sign In</a>
+			<div class="dropdown-divider"></div>
+		
+			<a class="dropdown-item" href="{{url_for('users.register')}}">Register</a>
+			
+		
 		{% endif %}
 		
 		<li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="carousel" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Carousel
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <div class="dropdown-menu" aria-labelledby="carousel">
 			<a class="dropdown-item" href="{{url_for('core.animals')}}">Animals</a>
 			<div class="dropdown-divider"></div>
 		
