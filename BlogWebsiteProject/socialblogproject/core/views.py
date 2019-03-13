@@ -13,7 +13,7 @@ def blog():
 	blog_posts = BlogPost.query.order_by(BlogPost.date.desc()).paginate(page=page,per_page=4)
 	return render_template('blog.html', blog_posts = blog_posts)
 
-@core.route('/about')
+@core.route('/about_me')
 def about(): 
 	return render_template('about.html')
 
