@@ -11,7 +11,7 @@
 	<title>Andy's Personal Blog</title>
 </head>
 <body>
-	<nav class="navbar fixed-top navbar-light"  id="nav1">
+	<nav class="navbar fixed-top navbar-light"  id="baseNavbar">
 		<li class ='nav-link'>
 			<a href="{{url_for('core.index')}}">
 				<img src="/static/pics/home.png" width="30" height="30" class="d-inline-block align-top" alt=""><b><font color ='black'> Home</font></b></a>
@@ -77,7 +77,7 @@
 	</ul>
 	</nav>
 	
-<div style='padding-top: 65px' >
+<div id='baseDivider' >
 
 	{% block content %}
 
