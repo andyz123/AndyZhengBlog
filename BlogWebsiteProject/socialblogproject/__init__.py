@@ -3,10 +3,11 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
 
+
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = 'secretkey'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:password@localhost/db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://b3d6a39b7a3e9d:dfcdbd62@us-cdbr-iron-east-03.cleardb.net/heroku_f4b69676d6eb41c'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] =False
 
 db = SQLAlchemy(app)
