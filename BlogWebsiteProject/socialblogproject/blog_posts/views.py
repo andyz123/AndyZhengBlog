@@ -29,8 +29,8 @@ def blog_post(blog_post_id):
 	return render_template('blog_post.html', title = blog_post.title,
 							date = blog_post.date, post = blog_post)
 
-@blog_posts.route('/<int:blog_post_id>_by_date')
-def blog_post_by_date(blog_post_id):
+@blog_posts.route("/<blog_date>/<int:blog_post_id>")
+def blog_post_by_date(blog_post_id, blog_date):
 	blog_post = BlogPost.query.get_or_404(blog_post_id)
 	blog_posts = BlogPost.query.order_by(BlogPost.date.desc())
 	return render_template('blog_post_by_date.html', title = blog_post.title,

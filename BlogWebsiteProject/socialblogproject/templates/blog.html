@@ -37,7 +37,7 @@
 			<div class="card-body" >
 				
 				Written by: <a href="{{url_for('users.user_posts', username = post.author.username)}}">{{post.author.username.upper()}}</a>
-				<h6>Published on: <a href="{{url_for('blog_posts.blog_post_by_date', blog_post_id = post.id)}}">{{post.date.strftime('%m-%d-20%y')}}</a></h6>
+				<h6>Published on: <a href="{{url_for('blog_posts.blog_post_by_date', blog_post_id = post.id, blog_date = post.date.strftime('%m-%d-20%y'))}}">{{post.date.strftime('%m-%d-20%y')}}</a></h6>
 				<br>
 				{% if post.text|length > 50 %}
 				<h4 style="font-family: garamond;">{{post.text[:50]}} ...</h4>

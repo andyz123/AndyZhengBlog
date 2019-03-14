@@ -10,7 +10,7 @@ def index():
 @core.route('/blog')
 def blog():
 	page = request.args.get('page', 1, type=int)
-	blog_posts = BlogPost.query.order_by(BlogPost.date.desc()).paginate(page=page,per_page=4)
+	blog_posts = BlogPost.query.order_by(BlogPost.date.desc()).paginate(page=page,per_page=5)
 	return render_template('blog.html', blog_posts = blog_posts)
 
 @core.route('/about_me')
