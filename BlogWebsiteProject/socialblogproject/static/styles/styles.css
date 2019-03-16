@@ -1,19 +1,27 @@
+#account, #baseNavbarFonts, #carousel, #signin{
+	color:black;
+}
+
+#accountBody{
+	background: linear-gradient(to bottom right, white,#669999);
+}
+
+#accountPage{
+	background-color: #DAE9E4;
+}
+
 #baseNavbar{
-	background: rgba(255,250,250,0.7);
+	background: rgba(255,250,250,0.5);
 }
 
 #baseNavbarDivider{
 	padding-top: 65px;
 }
 
-#accountpage{
-	background-color: #DAE9E4;
-}
-
-#accountbody{
-	background: linear-gradient(to bottom right, white,#669999);
-}
-
 #carouselPics{
-	height: 675px;
+	height: 680px;
+}
+
+#portfolioBody{
+	background-image: linear-gradient(to bottom right, #ffffff,gray);
 }
