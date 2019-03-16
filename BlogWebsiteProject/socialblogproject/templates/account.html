@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
-<body id = 'accountBody'>
+<body id = 'limeGradient'>
 	
 
 	<div class='container'>
-	<div class="jumbotron border border-primary" id = 'accountPage'>
+	<div class="jumbotron border border-primary postColor">
 		<div align='center'>
 			<h1><i>Welcome to your account page, <span class="badge badge-pill badge-success">{{current_user.username.upper()}}</span>!</i></h1>
 			<img align = 'center' src="{{url_for('static',filename = 'profile_pics/' + current_user.profile_image)}}">
@@ -14,7 +14,7 @@
 	</div>
 	</div>
 	<div class='container'>
-		<div class="jumbotron border border-primary" id = 'accountPage'>
+		<div class="jumbotron border border-primary postColor">
 		<form method = 'POST' action="" enctype="multipart/form-data">
 			{{form.hidden_tag()}}
 			<div class="form-group">

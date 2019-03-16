@@ -4,17 +4,17 @@
 
 
  
-<body background="static/pics/homepage.jpg" style="background-size: 100% 100vh; background-repeat: no-repeat; background-color: #514c4c;">
+<body id ='indexBackground'>
 	<hr style="border-style: none; height: 85px;">
 	<header>
-	<h1 align="center" style="color:rgba(248, 247, 246, 0.8); font-size: 7vw; font-family: 'Garamond'; " >Andy Zheng</h1>
+	<h1 id ='indexWelcome1'>Andy Zheng</h1>
 	</header>
-	<h3 align="center" style="color:rgba(248, 247, 246, 0.8); font-size: 3vw; font-family: 'Garamond'; "> <b>Welcomes</b></h3>
+	<h3 id = 'indexWelcome2'> <b>Welcomes</b></h3>
 	{% if current_user.is_authenticated %}
-	<h4 align="center" style="color:rgba(248, 247, 246, 0.8); font-size: 3vw; font-family: 'Garamond'; "> <b>You,</b></h4>
-	<h1 align="center" style="color:rgba(248, 247, 246, 0.8); font-size: 7vw; font-family: 'Garamond'; "> <u>{{current_user.username}}</u></h1>
+	<h4 id = 'indexWelcome2'> <b>You,</b></h4>
+	<h1 id = 'indexWelcome1'> <u>{{current_user.username}}</u></h1>
 	{% else %}
-	<h4 align="center" style="color:rgba(248, 247, 246, 0.8); font-size: 3vw; font-family: 'Garamond'; "> <b>You!</b></h4>
+	<h4 id = 'indexWelcome1'> <b>You!</b></h4>
 	{% endif %}
 	<!-- <hr style="border-style: none; height: 100px; ">
 	<footer>
