@@ -2,6 +2,18 @@
 	background: rgba(255,250,250,0.7);
 }
 
-#baseDivider{
+#baseNavbarDivider{
 	padding-top: 65px;
+}
+
+#accountpage{
+	background-color: #DAE9E4;
+}
+
+#accountbody{
+	background: linear-gradient(to bottom right, white,#669999);
+}
+
+#carouselPics{
+	height: 675px;
 }
