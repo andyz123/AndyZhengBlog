@@ -1,7 +1,5 @@
 # Introduction
-This is a blog site developed using the Flask framework and deployed to Heroku under the domain www.andyzhengblog.com. Python is one of, if not my favorite language so I decided to write the back-end logic using Python instead of the typical HTML, CSS, Javascript combo. The site's design is something I really struggled with to perfect. If anybody has any suggestions, feel free to send me some!
-- You're able to create an account, post messages, upload a profile picture and more.
-- You do not need a legitimate email address to register in order to test the site. It just has to pass the email check (something@something.com)
+This is a blog site developed using the Flask framework and deployed to Heroku under the domain https://www.andyzhengblog.com/. Python is one of, if not my favorite language so I decided to write the back-end logic using Python instead of the typical HTML, CSS, Javascript combo. If anybody has any suggestions, feel free to send me some!
 
 # Features
 - Nice carousels!
