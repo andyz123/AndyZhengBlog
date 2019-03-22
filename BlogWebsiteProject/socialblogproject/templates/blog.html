@@ -2,8 +2,8 @@
 {% block content %}
 <body id = 'blackGradient'>
 	
-	<div class = 'jumbotron border border-primary' id = 'blogJumbo'>
-		<div align="center" id = 'blogJumboText'>
+	<div class = 'jumbotron border border-primary' id='blogJumbo'>
+		<div align="center" id='blogJumboText'>
 		{% if current_user.is_authenticated %}
 		<h1>Welcome to the Blog, {{current_user.username}}!</h1>
 		<h2>Feel free to browse or post.</h2>

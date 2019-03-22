@@ -2,14 +2,17 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
+from flask_assets import Environment, Bundle
 import os
 
 app = Flask(__name__)
+assets = Environment(app)
 
+css = Bundle('styles/styles.css', 'styles/portfolioStyles.css', output = 'gen/main.css')
+assets.register('main_css', css)
 app.config['SECRET_KEY'] = 'secretkey'
 basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'data.sqlite')
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://b2be7b3101f934:07d2d4bc@us-cdbr-iron-east-03.cleardb.net/heroku_c7fab49ed293449'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] =False
 
 db = SQLAlchemy(app)
