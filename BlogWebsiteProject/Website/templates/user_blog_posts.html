@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block content %}
+<body id = 'limeGradient'>
+	<div class='container'>
+		<div class="jumbotron border border-primary " id = 'blogPostByDate'>
+			<div>
+				<h1><i>Welcome to the profile page for <span class="badge badge-pill badge-success">{{user.username.upper()}}</span>!</i></h1>
+				<img src="{{url_for('static', filename='profile_pics/' + user.profile_image)}}">
+				<br><br>
+				<h5>Below you can see all posts by the user: </h5>
+			</div>
+		</div>
+	
+		
+		{% for post in blog_posts.items %}
+		<div class="jumbotron border border-primary" id = 'blogPostByDate'>
+		<div class="card text-center border border-primary" >
+			 <div class="card-header">
+    			Post #{{post.id}} 
+    			
+  			</div>
+			<div class="card-body" >
+				<h2><a class="card-title" href="{{url_for('blog_posts.blog_post', blog_post_id = post.id)}}">{{post.title}}</a></h2>
+				Written by:  <a href="{{url_for('users.user_posts', username = post.author.username)}}">{{post.author.username.upper()}}</a>
+				<p>Published on: {{post.date.strftime('%m-%d-20%y')}}</p>
+				<a class = 'btn btn-primary' href="{{url_for('blog_posts.blog_post', blog_post_id = post.id)}}">Read here!</a>
+			
+			</div>
+		</div>
+		</div>
+		{% endfor %}
+	
+		</div>
+
+<nav aria-label = 'Page Navigation example' id = 'limeGradient'>
+	<ul class="pagination justify-content-center pagination-lg">
+		{% for page_num in blog_posts.iter_pages() %}
+			{% if blog_posts.page == page_num %}
+			<li class="page-item disabled">
+				<a href="{{url_for('users.user_posts', username = user.username, page = page_num)}}" class="page-link">{{ page_num }}</a>
+			</li>
+			{% else %}
+			<li class="page-item">
+				<a href="{{url_for('users.user_posts', username = user.username, page = page_num)}}" class="page-link">{{ page_num }}</a>
+			</li>
+			{% endif %}
+		
+		{% endfor %}
+	</ul>
+	
+</nav>
+
+{% endblock%}

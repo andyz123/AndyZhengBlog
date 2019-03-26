@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+	{% assets 'main_css' %}
+	<link rel= "stylesheet" type= "text/css" href= "{{ ASSET_URL }}">
+	{% endassets %}
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='pics/faviconandy.ico') }}">
+	<title>Andy's Portfolio Page</title>
+</head>
+<body>
+	<nav class="navbar fixed-top navbar-light"  id="baseNavbar">
+		<li class ='nav-link'>
+			<a href="{{url_for('core.index')}}">
+				<img src="/static/pics/home.png" width="30" height="30" class="d-inline-block align-top" alt=""><b></b></a>
+		</li>
+		<ul class="nav justify-content-end">
+		<li class ='nav-link'>
+			<a href="{{url_for('core.blog')}}" id='blackFont'>Blog</a>
+		</li>
+		<li class ='nav-link'>
+			<a href="{{url_for('core.about')}}" id='blackFont'>Portfolio</a>
+		</li>
+
+		<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="carousel" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+          Carousel
+        </a>
+        <div class="dropdown-menu" aria-labelledby="carousel">
+			<a class="dropdown-item" href="{{url_for('core.animals')}}">Animals</a>
+			<div class="dropdown-divider"></div>
+		
+			<a class="dropdown-item" href="{{url_for('core.nature')}}">Nature</a>
+			<div class="dropdown-divider"></div>
+		
+			<a class="dropdown-item" href="{{url_for('core.headphones')}}">Headphones</a>
+			<div class="dropdown-divider"></div>
+
+			<a class="dropdown-item" href="{{url_for('core.technology')}}">Technology</a>
+			{% if current_user.is_authenticated %}
+			<div class="dropdown-divider"></div>
+			<a class="dropdown-item" href="{{url_for('core.goat')}}">GOAT</a>
+			{% endif %}
+			
+		{% if current_user.is_authenticated %}
+		<li class= 'nav-link'>
+			<a href="{{url_for('blog_posts.create_post')}}" id='blackFont'>Create Post</a>
+		</li>
+		<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="account" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Account (<i>Hello, {{current_user.username}}!</i>)</a>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="account">
+			<a class="dropdown-item" href="{{url_for('users.account')}}">Account Settings</a>
+			<div class="dropdown-divider"></div>
+		
+			<a class="dropdown-item" href="{{url_for('users.logout')}}">Sign Out</a>
+
+		{% else %}
+		<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="signin" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Sign In
+        </a>
+        <div class="dropdown-menu" aria-labelledby="signin">
+			<a class="dropdown-item" href="{{url_for('users.login')}}">Sign In</a>
+			<div class="dropdown-divider"></div>
+		
+			<a class="dropdown-item" href="{{url_for('users.register')}}">Register</a>
+			
+		
+		{% endif %}
+		
+	</ul>
+	</nav>
+	
+<div id='baseNavbarDivider' >
+
+	<div class = 'jumbotron'style="background-image: linear-gradient(to bottom right, #ffffff,gray); ">
+		<h2><u><strong>About Me</strong></u></h2>
+		<p>Hey there! My name is Andy and I am a Software Engineer/Developer from Brooklyn, NY. I graduated from Stony Brook University in 2017.
+		<br>
+		Interest-wise, I really enjoy coding, headphone browsing, basketball and technology (broad, but anything that can make our lives easier).</p>
+		
+		<p>Python has always been one of my favorite programming languages, so when I decided to write my own personal website from scratch, I thought- why not write it in Python?
+		<br> 
+		It would be a decent alternative to the classic combination of HTML, CSS, and JavaScript.</p>
+		<p>So with the aid of the Flask framework, I managed to write the entire back-end logic using Python!</p>
+		<p>The tech stack for this website looks something like this:
+			<ul>
+			<li>Python (Flask), HTML, CSS (Bootstrap), SQLite</li>
+		</ul></p>
+
+		
+
+		<h3><u><strong>My Skills</strong></u></h3>
+		<ul>
+			<li><b>Languages:</b> Python, JavaScript, Java, SQL, NoSQL</li>
+			<li><b>Databases:</b> SQLite, MySQL, MongoDB</li>
+			<li><b>Technologies:</b> HTML, CSS, jQuery, Node.js, Git</li>
+			<li><b>Frameworks:</b> Flask, Express, Bootstrap, Mongoose</li>
+			<li><b>Soft Skills:</b> Critical Thinking, Problem Solving, Self-Motivated, Team Player</li>
+		</ul>
+		
+		<h3><u><strong>Contact and Platforms</strong></u></h3>
+		<strong>Email: Andy@andyzhengblog.com</strong> - I check very often
+		<br><br>
+		<strong>Github:</strong>
+		<a href="https://github.com/andyz123"><button type="button" class="btn btn-outline-dark"><i style="font-size:24px" class="fa">&#xf09b;</i></button></a>
+		<strong>LinkedIn:</strong>
+		<a href="https://www.linkedin.com/in/andy-zheng-5a512614a/"><button type="button" class="btn btn-outline-primary"><i style="font-size:24px" class="fa">&#xf08c;</i></button></a>
+	</div>
+
+	<footer>
+		<p align="center" style="font-size: 1vw; font-family: 'Garamond';">© Andy Zheng 2019</p>
+	</footer>
+</div>

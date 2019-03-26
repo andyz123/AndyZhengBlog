@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+ 
+<body id ='indexBackground'>
+	<hr style="border-style: none; height: 85px;">
+	<header>
+	<h1 id ='indexWelcome1'>Andy Zheng</h1>
+	</header>
+	<h3 id = 'indexWelcome2'> <b>Welcomes</b></h3>
+	{% if current_user.is_authenticated %}
+	<h4 id = 'indexWelcome2'> <b>You,</b></h4>
+	<h1 id = 'indexWelcome1'> <u>{{current_user.username}}</u></h1>
+	{% else %}
+	<h4 id = 'indexWelcome1'> <b>You!</b></h4>
+	{% endif %}
+	<!-- <hr style="border-style: none; height: 100px; ">
+	<footer>
+		<p style="color:rgba(248, 247, 246, 0.8); font-size: 1vw; font-family: 'Garamond'; text-indent: 100px ">© Andy Zheng 2019</p>
+	</footer> -->
+{% endblock %}
