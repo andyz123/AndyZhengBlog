@@ -10,14 +10,20 @@
 		<div class="jumbotron border border-primary " id = 'blogPostByDate'>
 		<div class="card text-center border border-primary" >
 			<div class="card-header">
-				Post #{{same_day_posts.id}} 
+				<h4 id = 'fontGaramond'><a class="card-title" href="{{url_for('blog_posts.blog_post', blog_post_id = post.id)}}">{{post.title}}</a></h4> 
 			</div>
 			<div class="card-body" >
-				<h2><a class="card-title" href="{{url_for('blog_posts.blog_post', blog_post_id = same_day_posts.id)}}">{{same_day_posts.title}}</a></h2>
-				Written by:  <a href="{{url_for('users.user_posts', username = same_day_posts.author.username)}}">{{same_day_posts.author.username.upper()}}</a>
-				<p>Published on: {{same_day_posts.date.strftime('%m-%d-20%y')}}</p>
-				<a class = 'btn btn-primary' href="{{url_for('blog_posts.blog_post', blog_post_id = same_day_posts.id)}}">Read here!</a>
-				</div>
+				Written by: <a href="{{url_for('users.user_posts', username = post.author.username)}}">{{post.author.username.upper()}}</a>
+				<h6>Published on: <a href="{{url_for('blog_posts.blog_post_by_date', blog_post_id = post.id, blog_date = post.date.strftime('%m-%d-20%y'))}}">{{post.date.strftime('%m-%d-20%y')}}</a></h6>
+				<br>
+				{% if post.text|length > 50 %}
+				<h4 id = 'fontGaramond'>{{post.text[:50]}} ...</h4>
+				<a class = 'btn btn-primary' href="{{url_for('blog_posts.blog_post', blog_post_id = post.id)}}">Continue reading →</a>
+				{% else %}
+				<h4 id = 'fontGaramond'>{{post.text}}</h4>
+				<a class = 'btn btn-primary' href="{{url_for('blog_posts.blog_post', blog_post_id = post.id)}}">Read →</a>
+				{% endif %}
+		</div>
 			</div>
 		</div>
 		{% endif %}
