@@ -1,20 +1,48 @@
-body{
-	background-image: linear-gradient(to bottom right, #ffffff,gray);
-	margin: 0;
-	padding: 0;
-	height:100%;
-	width:100%;
+body.portfolio{
+	margin: 0 auto;
 }
 
 #account, #blackFont, #carousel, #signin{
 	color:black;
 }
 
-#baseNavbarDivider{
-	padding-top: 65px;
+/*#baseNavbar{
+	background: #f6f6f6;
+	opacity: 0.5;
+}*/
+
+#portfolioHeader{
+  height: 100vh; 
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background: url("/static/pics/portfolioBG.jpg"); 
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
+  font-color: white;
 }
 
-#baseNavbar{
-	background: rgba(255,250,250,0.5);
+#portfolioFooter {
+  height: 100vh; 
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  background: url("/static/pics/portfolioBG.jpg"); 
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  text-align: center;
 }
 
+.portfolioIntro {
+	margin-top:100px;
+	color: white;
+	opacity: 0.5;
+	font-family: 'Roboto', sans-serif;
+}

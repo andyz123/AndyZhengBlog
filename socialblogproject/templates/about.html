@@ -9,77 +9,39 @@
 	<link rel= "stylesheet" type= "text/css" href= "{{ ASSET_URL }}">
 	{% endassets %}
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"> 
 	<link rel="shortcut icon" href="{{ url_for('static', filename='pics/faviconandy.ico') }}">
 	<title>Andy's Portfolio Page</title>
 </head>
-<body>
-	<nav class="navbar fixed-top navbar-light"  id="baseNavbar">
+<body class='portfolio'>
+
+	<!-- header -->
+	<header id = 'portfolioHeader'>
+		<br>
+	<div>
+		<h1 class='portfolioIntro'>Andy Zheng.</h1>
+		<br>
+		<h1 class='portfolioIntro'>Portfolio.</h1>
+		<br>
+		<h1 class='portfolioIntro'>&darr;</h1>
+	</div>
+	</header>
+
+	<div>
+		<nav class="navbar sticky-top navbar-light"  id="baseNavbar">
 		<li class ='nav-link'>
 			<a href="{{url_for('core.index')}}">
 				<img src="/static/pics/home.png" width="30" height="30" class="d-inline-block align-top" alt=""><b></b></a>
 		</li>
 		<ul class="nav justify-content-end">
-		<li class ='nav-link'>
-			<a href="{{url_for('core.blog')}}" id='blackFont'>Blog</a>
+		<li class ='nav-link '>
+			<a href="{{url_for('core.blog')}}" class='blackFont'>Blog</a>
 		</li>
 		<li class ='nav-link'>
-			<a href="{{url_for('core.about')}}" id='blackFont'>Portfolio</a>
+			<a href="{{url_for('core.about')}}" class='blackFont'>Portfolio</a>
 		</li>
-
-		<li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="carousel" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-          Carousel
-        </a>
-        <div class="dropdown-menu" aria-labelledby="carousel">
-			<a class="dropdown-item" href="{{url_for('core.animals')}}">Animals</a>
-			<div class="dropdown-divider"></div>
-		
-			<a class="dropdown-item" href="{{url_for('core.nature')}}">Nature</a>
-			<div class="dropdown-divider"></div>
-		
-			<a class="dropdown-item" href="{{url_for('core.headphones')}}">Headphones</a>
-			<div class="dropdown-divider"></div>
-
-			<a class="dropdown-item" href="{{url_for('core.technology')}}">Technology</a>
-			{% if current_user.is_authenticated %}
-			<div class="dropdown-divider"></div>
-			<a class="dropdown-item" href="{{url_for('core.goat')}}">GOAT</a>
-			{% endif %}
-			
-		{% if current_user.is_authenticated %}
-		<li class= 'nav-link'>
-			<a href="{{url_for('blog_posts.create_post')}}" id='blackFont'>Create Post</a>
-		</li>
-		<li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="account" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Account (<i>Hello, {{current_user.username}}!</i>)</a>
-        </a>
-        <div class="dropdown-menu" aria-labelledby="account">
-			<a class="dropdown-item" href="{{url_for('users.account')}}">Account Settings</a>
-			<div class="dropdown-divider"></div>
-		
-			<a class="dropdown-item" href="{{url_for('users.logout')}}">Sign Out</a>
-
-		{% else %}
-		<li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="signin" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Sign In
-        </a>
-        <div class="dropdown-menu" aria-labelledby="signin">
-			<a class="dropdown-item" href="{{url_for('users.login')}}">Sign In</a>
-			<div class="dropdown-divider"></div>
-		
-			<a class="dropdown-item" href="{{url_for('users.register')}}">Register</a>
-			
-		
-		{% endif %}
-		
-	</ul>
-	</nav>
-	
-<div id='baseNavbarDivider' >
-
-	<div class = 'jumbotron'style="background-image: linear-gradient(to bottom right, #ffffff,gray); ">
+		</ul>
+		</nav>
 		<h2><u><strong>About Me</strong></u></h2>
 		<p>Hey there! My name is Andy and I am a Software Engineer/Developer from Brooklyn, NY. I graduated from Stony Brook University in 2017.
 		<br>
@@ -106,7 +68,7 @@
 		</ul>
 		
 		<h3><u><strong>Contact and Platforms</strong></u></h3>
-		<strong>Email: Andy@andyzhengblog.com</strong> - I check very often
+		<strong>Email: andy@andyzhengblog.com</strong> 
 		<br><br>
 		<strong>Github:</strong>
 		<a href="https://github.com/andyz123"><button type="button" class="btn btn-outline-dark"><i style="font-size:24px" class="fa">&#xf09b;</i></button></a>
@@ -114,7 +76,8 @@
 		<a href="https://www.linkedin.com/in/andy-zheng-5a512614a/"><button type="button" class="btn btn-outline-primary"><i style="font-size:24px" class="fa">&#xf08c;</i></button></a>
 	</div>
 
-	<footer>
-		<p align="center" style="font-size: 1vw; font-family: 'Garamond';">© Andy Zheng 2019</p>
+	<footer id='portfolioFooter'>
+		<!-- <p align="center" style="font-size: 1vw; font-family: 'Garamond';">© Andy Zheng 2019</p> -->
 	</footer>
-</div>
+</body>
+</html>
