@@ -1,9 +1,5 @@
 #baseNavbar{
-	background: rgba(255,250,250,0.5);
-}
-
-.navbarDivider{
-	padding-top: 65px;
+	background: rgba(255,250,250,0.3);
 }
 
 #blackGradient{
@@ -93,6 +89,10 @@
 
 .blackFont{
 	color:black;
+}
+
+.navbarDivider{
+	padding-top: 65px;
 }
 
 .postColor{

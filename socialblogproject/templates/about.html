@@ -9,13 +9,13 @@
 	<link rel= "stylesheet" type= "text/css" href= "{{ ASSET_URL }}">
 	{% endassets %}
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"> 
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Oswald"> 
 	<link rel="shortcut icon" href="{{ url_for('static', filename='pics/faviconandy.ico') }}">
-	<title>Andy's Portfolio Page</title>
+	<title>Andy Zheng | Portfolio</title>
 </head>
 <body class='portfolio'>
 
-	<!-- header -->
+	<!-- Header -->
 	<header id = 'portfolioHeader'>
 		<br>
 	<div>
@@ -26,9 +26,9 @@
 		<h1 class='portfolioIntro'>&darr;</h1>
 	</div>
 	</header>
-
+	<!-- Navbar -->
 	<div>
-		<nav class="navbar sticky-top navbar-light"  id="baseNavbar">
+		<nav class="navbar sticky-top navbar-light"  id="portfolioNavbar">
 		<li class ='nav-link'>
 			<a href="{{url_for('core.index')}}">
 				<img src="/static/pics/home.png" width="30" height="30" class="d-inline-block align-top" alt=""><b></b></a>
@@ -42,10 +42,105 @@
 		</li>
 		</ul>
 		</nav>
-		<h2><u><strong>About Me</strong></u></h2>
-		<p>Hey there! My name is Andy and I am a Software Engineer/Developer from Brooklyn, NY. I graduated from Stony Brook University in 2017.
+	<div>
+		<!-- Platform box and Summary -->
+		<div class='box'><p><u>Platforms</u></p>
+			<a href="https://github.com/andyz123"><button type="button" class="btn btn-outline-dark"><i class="fa">&#xf09b;</i></button></a>
+			<span class='paddingDistance'>
+			<a href="https://www.linkedin.com/in/andy-zheng-5a512614a/"><button type="button" class="btn btn-outline-primary"><i class="fa">&#xf08c;</i></button></a></span>
+			<span class='paddingDistance'>
+			<a href="mailto:andy@andyzhengblog.com"><button type="button" class="btn btn-outline-dark"><i class="fa">&#xf0e0;</i></button></a></span>
+		</div>
+		<div>
+			<h2 class='portfolioHeadingsAlt'>Hello!</h2>
+		<p class='summary'>I'm a Software Engineer/Developer from New York City, NY. I graduated from Stony Brook University in 2017. I love coding, design, games and basketball. Available for freelance work.</p>
+		</div>
+		<hr>
+		<!-- Skill table -->
+		<div id='portfolioTable'>
+			<h2 class='portfolioHeadingsAlt'>Skills</h2>
+			<table class="table table-borderless table-dark" >
+			    <tbody>
+			        <tr>
+			          <th>Languages:</th>
+			            <td>1</td>
+			            <td>2</td>
+			            <td>3</td>
+			        </tr>
+			        <tr>
+			          <th>Technologies:</th>
+			            <td>1</td>
+			            <td>2</td>
+			            <td>3</td>
+			        </tr>
+			        <tr>
+			          <th>Frameworks:</th>
+			            <td>1</td>
+			            <td>2</td>
+			            <td>3</td>
+			        </tr>
+			        <tr>
+			          <th>Databases:</th>
+			            <td>1</td>
+			            <td>2</td>
+			            <td>3</td>
+			        </tr>
+			    </tbody>
+			</table>
+		</div>
 		<br>
-		Interest-wise, I really enjoy coding, headphone browsing, basketball and technology (broad, but anything that can make our lives easier).</p>
+		<hr>
+		<!-- Portfolio Section -->
+	<div>
+		<h2 class='portfolioHeadings'>Portfolio</h2>
+		<div class='portfolioRow1'>
+			<img src="static/pics/hp5.jpg" class='shoppingList'>
+			<h3>stuff</h3>
+			<p>stuff</p>
+		</div>
+
+		<div class='portfolioRow'>
+			<img src="static/pics/goat4.jpg" class='blackjack'>
+			<h3>stuff</h3>
+			<p>stuff</p>
+		</div>
+
+		<div class='portfolioRow'>
+			<img src="static/pics/tech4.jpg" class='webscrape'>
+			<h3>stuff</h3>
+			<p>stuff</p>
+		</div>
+
+		<div class='portfolioRow'>
+			<img src="static/pics/goat3.jpg" class='personalSite'>
+			<h3>stuff</h3>
+			<p>stuff</p>
+		</div>
+	</div>
+	<hr>
+	<div>
+		<h2 class='portfolioHeadingsAlt'>About</h2>
+		<div class='portfolioAbout'>
+		<p>I learned my first programming language when I was a Freshman at Stony Brook University. That was in 2013, 6 years ago.</p>
+		<p>Since then, I've learned and worked with many different programming languages and technologies.</p>
+		<p>My preferred programming langauge is Python, so when I decided to write my own website, it was a toss-up between Django and Flask.</p>
+		<p>I didn't have a preference. However, Flask is the better choice for what I wanted to do. So I went with Flask and this is my work.</p>
+		</div>
+	</div>
+	<hr>
+	<div>
+		<h2 class='portfolioHeadingsAlt'>Contact</h2>
+		<p class='portfolioAbout'>Email: andy@andyzhengblog.com</p>
+		<form action="mailto:andy@andyzhengblog.com" method="post" enctype="text/plain" class='portfolioContactForm'>
+			<div class="form-group">
+	    		<textarea class="form-control" id="exampleFormControlTextarea1" name='Contacted from blog' rows="3"></textarea>
+	    		<br>
+	    		<button type="submit" class="btn btn-primary">Submit</button>
+  			</div>
+			
+		</form>
+	</div>
+		<!-- <p>Interest-wise, I really enjoy coding, headphone browsing, basketball and technology (broad, but anything that can make our lives easier).</p>
 		
 		<p>Python has always been one of my favorite programming languages, so when I decided to write my own personal website from scratch, I thought- why not write it in Python?
 		<br> 
@@ -73,9 +168,9 @@
 		<strong>Github:</strong>
 		<a href="https://github.com/andyz123"><button type="button" class="btn btn-outline-dark"><i style="font-size:24px" class="fa">&#xf09b;</i></button></a>
 		<strong>LinkedIn:</strong>
-		<a href="https://www.linkedin.com/in/andy-zheng-5a512614a/"><button type="button" class="btn btn-outline-primary"><i style="font-size:24px" class="fa">&#xf08c;</i></button></a>
+		<a href="https://www.linkedin.com/in/andy-zheng-5a512614a/"><button type="button" class="btn btn-outline-primary"><i style="font-size:24px" class="fa">&#xf08c;</i></button></a> -->
 	</div>
-
+	
 	<footer id='portfolioFooter'>
 		<!-- <p align="center" style="font-size: 1vw; font-family: 'Garamond';">© Andy Zheng 2019</p> -->
 	</footer>
