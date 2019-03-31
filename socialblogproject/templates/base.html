@@ -14,20 +14,21 @@
 </head>
 <body>
 	<nav class="navbar fixed-top navbar-light"  id="baseNavbar">
-		<li class ='nav-link'>
+		<li class ='nav-link py-0'>
 			<a href="{{url_for('core.index')}}">
-				<img src="/static/pics/home.png" width="30" height="30" class="d-inline-block align-top" alt=""><b></b></a>
+				<button type="button" class="btn btn-outline-dark">
+				<img src="/static/pics/home.png" width="30" height="30" class="d-inline-block align-top"></button></a>
 		</li>
 		<ul class="nav justify-content-end">
-		<li class ='nav-link '>
+		<li class ='nav-link py-0'>
 			<a href="{{url_for('core.blog')}}" class='blackFont'>Blog</a>
 		</li>
-		<li class ='nav-link'>
+		<li class ='nav-link py-0'>
 			<a href="{{url_for('core.about')}}" class='blackFont'>Portfolio</a>
 		</li>
 
 		<li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle blackFont" href="#" id="carousel" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+        <a class="nav-link dropdown-toggle blackFont py-0" href="#" id="carousel" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
           Carousel
         </a>
         <div class="dropdown-menu" aria-labelledby="carousel">
@@ -47,11 +48,11 @@
 			{% endif %}
 			
 		{% if current_user.is_authenticated %}
-		<li class= 'nav-link'>
+		<li class= 'nav-link py-0'>
 			<a href="{{url_for('blog_posts.create_post')}}" class='blackFont'>Create Post</a>
 		</li>
-		<li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle blackFont" href="#" id="account" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<li class="nav-item dropdown ">
+        <a class="nav-link dropdown-toggle blackFont py-0" href="#" id="account" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Account (<i>Hello, {{current_user.username}}!</i>)</a>
         </a>
         <div class="dropdown-menu" aria-labelledby="account">
@@ -62,7 +63,7 @@
 
 		{% else %}
 		<li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle blackFont" href="#" id="signin" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle blackFont py-0" href="#" id="signin" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Sign In
         </a>
         <div class="dropdown-menu" aria-labelledby="signin">

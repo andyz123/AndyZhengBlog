@@ -98,3 +98,15 @@
 .postColor{
 	background-color: #DAE9E4;
 }
+
+/*.a:hover {
+    position: relative;
+}
+*/
+/*.a:hover:after {
+	content: url("/static/pics/portfolioBG.jpg"); 
+	display: block;
+    position: absolute;
+    top:0;
+    left:0;
+}*/

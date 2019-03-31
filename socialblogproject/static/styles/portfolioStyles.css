@@ -1,159 +1,164 @@
-body.portfolio{
-	margin: 0 auto;
+body.portfolio {
+    margin: 0 auto;
 }
 
 i.fa {
-	font-size:1.5rem;
+    font-size: 1.5rem;
 }
 
 hr {
-	border: dotted #EAF6F6 6px;
-	border-bottom: none;
-	width: 4%;
+    border: dotted #EAF6F6 6px;
+    border-bottom: none;
+    width: 4%;
 }
 
-#portfolioNavbar{
-	background: rgba(234,230,230,0.3);
+#portfolioNavbar {
+    background: rgba(234, 230, 230, 0.3);
 }
 
-#portfolioHeader{
-  height: 100vh; 
-  width: 100%;
-  top: 0;
-  bottom: 0;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  background: url("/static/pics/portfolioBG.jpg"); 
-  background-size: cover;
-  background-position: top;
-  background-attachment: fixed;
-  font-color: white;
+#portfolioHeader {
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background: url("/static/pics/portfolioBG.jpg");
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+    font-color: white;
 }
 
 #portfolioFooter {
-  height: 100vh; 
-  width: 100%;
-  top: 0;
-  bottom: 0;
-  margin: 0;
-  padding: 0;
-  background: url("/static/pics/portfolioBG.jpg"); 
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  text-align: center;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    background: url("/static/pics/portfolioBG.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
 }
 
 #portfolioTable {
-	width: 20%;
-	margin: 0 auto;
+    width: 20%;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+#navbarPadding {
+    margin-right: 35px;
 }
 
 .portfolioAbout {
-	width:50%;
-	margin: 0 auto;
-	font-family: 'Oswald', sans-serif;
-	padding-bottom: 10px;
+    width: 50%;
+    margin: 0 auto;
+    padding-bottom: 10px;
+    font-family: 'Oswald', sans-serif;
 }
 
 .portfolioContactForm {
-	width: 50%;
-	margin: 0 auto;
+    width: 50%;
+    margin: 0 auto;
 }
 
 .portfolioIntro {
-	margin-top:100px;
-	color: white;
-	opacity: 0.5;
-	font-family: 'Roboto', sans-serif;
+    margin-top: 100px;
+    color: white;
+    opacity: 0.5;
+    font-family: 'Roboto', sans-serif;
+}
+
+.portfolioRFont {
+    font-family: 'Roboto', sans-serif;
+}
+
+.portfolioOFont {
+    font-family: 'Oswald', sans-serif;
 }
 
 .summary {
-	width:40%;
-	margin: 0 auto;
-	padding-top: 15px;
-	font-size: 18px;
-	padding-bottom:20px;
-	font-family: 'Oswald', sans-serif;
+    width: 40%;
+    margin: 0 auto;
+    padding-top: 15px;
+    font-size: 18px;
+    padding-bottom: 20px;
+    font-family: 'Oswald', sans-serif;
 }
 
 .box {
-	border:solid;
-	height: 8rem;
-	width: 20%;
-	margin:10px auto;
-	text-align:center;
-	font-family: 'Roboto', sans-serif;
+    border: solid;
+    height: 8rem;
+    width: 20%;
+    margin: 10px auto;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.homeButtonResize {
 	
 }
 
 .paddingDistance {
-	padding-left:1rem;
+    padding-left: 1rem;
 }
 
 .portfolioHeadings {
-	text-align: center;
-	padding-top: 30px;
-	padding-right: 10px;
-	padding-bottom: 50px;
-	font-family: 'Roboto', sans-serif;
+    text-align: center;
+    padding-top: 30px;
+    padding-right: 10px;
+    padding-bottom: 50px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .portfolioHeadingsAlt {
-	text-align: center;
-	padding-top: 30px;
-	padding-right: 10px;
-	padding-bottom: 30px;
-	font-family: 'Roboto', sans-serif;
+    text-align: center;
+    padding-top: 30px;
+    padding-right: 10px;
+    padding-bottom: 30px;
+    font-family: 'Roboto', sans-serif;
 }
-
-/*.portfolioHeadingsAlt:hover {
-    position: relative;
-}
-*/
-/*.portfolioHeadingsAlt:hover:after {
-	content: url("/static/pics/portfolioBG.jpg"); 
-	display: block;
-    position: absolute;
-    top:0;
-    left:0;
-}*/
 
 .portfolioRow1 {
-	width:50%;
-	margin: 0 auto 100px auto;
-	text-align: left;
-	line-height: 2;
+    width: 50%;
+    margin: 0 auto 0 auto;
+    text-align: left;
+    line-height: 2;
 }
 
-.portfolioRow {
-	width:50%;
-	margin: 100px auto 100px auto;
-	text-align: left;
-	line-height: 2;
+.portfolioRow2 {
+    width: 50%;
+    margin: 150px auto 150px auto;
+    text-align: left;
+    line-height: 2;
 }
 
 .blackjack {
-	width:20%;
-	float:right;
-	margin-right: 30px;
+    width: 40%;
+    float: right;
+    margin-right: 30px;
 }
 
 .personalSite {
-	width:20%;
-	float:right;
-	margin-right: 30px;
+    width: 40%;
+    float: right;
+    margin-right: 30px;
 }
 
 .shoppingList {
-	width:20%;
-	float:left;
-	margin-right: 30px;
+    width: 40%;
+    float: left;
+    margin-right: 30px;
 }
 
 .webscrape {
-	width:20%;
-	float:left;
-	margin-right: 30px;
+    width: 40%;
+    float: left;
+    margin-right: 30px;
 }
