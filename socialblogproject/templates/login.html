@@ -13,27 +13,32 @@
  {% endif %}
 {% endwith %}
 
-<body id = 'limeGradient'>
+<div id = 'formsGradient' class='navbarFormsDivider'>
 	<div class = 'container'>
 	<div class="jumbotron postColor">
 
-	<form method='POST'>
-		{{ form.hidden_tag() }}
-		<div class="form-group">
-		{{ form.email.label (class='form-control-label') }}
-		{{ form.email (class='form-control form-control-lg') }}
-		</div>
+		<form method='POST'>
+			{{ form.hidden_tag() }}
+			<div class="form-group">
+			{{ form.email.label (class='form-control-label') }}
+			{{ form.email (class='form-control form-control-lg') }}
+			</div>
 
-		<div class="form-group">
-		{{ form.password.label (class='form-control-label') }}
-		{{ form.password (class='form-control form-control-lg') }}
-		</div>
+			<div class="form-group">
+			{{ form.password.label (class='form-control-label') }}
+			{{ form.password (class='form-control form-control-lg') }}
+			</div>
 
-		<div class="form-group">
-		{{ form.submit(class='btn btn-outline-info') }}
-		</div>
-	</form>
+			<div class="form-group">
+			{{ form.submit(class='btn btn-outline-info') }}
+			</div>
+		</form>
+		<b>Don't have an account? Sign up <a href="{{url_for('users.register')}}"><button type="button" class="btn btn-outline-info" id='formsButtonMargin'>here!</button></a></b>
 	</div>
 	</div>
-
+</div>
+<footer class='indexFooterText'>
+	<hr class='indexFooter'>
+	&copy Andy Zheng 2019
+</footer>
 {% endblock %}

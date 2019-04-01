@@ -6,7 +6,7 @@ i.fa {
     font-size: 1.5rem;
 }
 
-hr {
+hr.portfolioSeparate {
     border: dotted #EAF6F6 6px;
     border-bottom: none;
     width: 4%;
@@ -31,7 +31,7 @@ hr {
     font-color: white;
 }
 
-#portfolioFooter {
+#portfolioEnding {
     height: 100vh;
     width: 100%;
     top: 0;
@@ -42,17 +42,34 @@ hr {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    text-align: center;
+}
+
+#portfolioFooter {
+	margin: 0 auto;
 }
 
 #portfolioTable {
     width: 20%;
     margin: 0 auto;
+    box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
     font-family: 'Roboto', sans-serif;
+}
+
+#portfolioTable:hover {
+	box-shadow: 5px 10px 18px #888888;
 }
 
 #navbarPadding {
     margin-right: 35px;
+}
+
+#link {
+	color: black;
+}
+
+#link:hover {
+	color: #3fc1c9;
+	text-decoration: none;
 }
 
 .portfolioAbout {
@@ -75,6 +92,7 @@ hr {
 }
 
 .portfolioRFont {
+	color: #3fc1c9;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -86,23 +104,24 @@ hr {
     width: 40%;
     margin: 0 auto;
     padding-top: 15px;
-    font-size: 18px;
     padding-bottom: 20px;
+    padding-left: 15px;
+    font-size: 18px;
     font-family: 'Oswald', sans-serif;
 }
 
 .box {
     border: solid;
+    box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
     height: 8rem;
     width: 20%;
     margin: 10px auto;
     text-align: center;
     font-family: 'Roboto', sans-serif;
-
 }
 
-.homeButtonResize {
-	
+.box:hover {
+	box-shadow: 5px 10px 18px #888888;
 }
 
 .paddingDistance {
@@ -114,6 +133,7 @@ hr {
     padding-top: 30px;
     padding-right: 10px;
     padding-bottom: 50px;
+    color: #11999e;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -122,43 +142,80 @@ hr {
     padding-top: 30px;
     padding-right: 10px;
     padding-bottom: 30px;
+    color: #11999e;
     font-family: 'Roboto', sans-serif;
 }
 
 .portfolioRow1 {
     width: 50%;
-    margin: 0 auto 0 auto;
+    margin: 0 auto;
     text-align: left;
     line-height: 2;
 }
 
 .portfolioRow2 {
     width: 50%;
-    margin: 150px auto 150px auto;
+    margin: 100px auto 100px auto;
     text-align: left;
     line-height: 2;
 }
 
 .blackjack {
+	box-shadow: 5px 10px 18px #888888;
     width: 40%;
     float: right;
     margin-right: 30px;
+    transition: width 1s;
+	-moz-transition: width 1s;
+	-webkit-transition: width 1s;
+}
+
+.blackjack:hover {
+	width:100%;
+	margin: 0 auto;
 }
 
 .personalSite {
+	box-shadow: 5px 10px 18px #888888;
     width: 40%;
     float: right;
     margin-right: 30px;
+    transition: width 1s;
+	-moz-transition: width 1s;
+	-webkit-transition: width 1s;
+}
+
+.personalSite:hover {
+	width:100%;
+	margin: 0 auto;
 }
 
 .shoppingList {
+	box-shadow: 5px 10px 18px #888888;
     width: 40%;
     float: left;
     margin-right: 30px;
+    transition: width 1s;
+	-moz-transition: width 1s;
+	-webkit-transition: width 1s;
+}
+
+.shoppingList:hover {
+	width:100%;
+	margin: 0 auto;
 }
 
 .webscrape {
+	box-shadow: 5px 10px 18px #888888;
     width: 40%;
     float: left;
     margin-right: 30px;
+    transition: width 1s;
+	-moz-transition: width 1s;
+	-webkit-transition: width 1s;
+}
+
+.webscrape:hover {
+	width:100%;
+	margin: 0 auto;
 }

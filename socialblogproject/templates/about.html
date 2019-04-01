@@ -35,26 +35,23 @@
 		</li>
 		<ul class="nav justify-content-end" id='navbarPadding'>
 		<li class ='nav-link '>
-			<a href="{{url_for('core.blog')}}" class='blackFont'>Blog</a>
+			<a href="{{url_for('core.blog')}}" id='link'>Blog</a>
 		</li>
 		<li class ='nav-link'>
-			<a href="{{url_for('core.about')}}" class='blackFont'>Portfolio</a>
+			<a href="{{url_for('core.about')}}" id='link'>Portfolio</a>
 		</li>
 		<li class="nav-item dropdown">
-		<a class="nav-link dropdown-toggle blackFont" href="#" id="carousel" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id='umm'>
-          Carousel
+		<a class="nav-link dropdown-toggle blackFont" href="#" id="carousel" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span id='link'>Carousel</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="carousel">
-			<a class="dropdown-item" href="{{url_for('core.animals')}}">Animals</a>
-			<div class="dropdown-divider"></div>
-		
-			<a class="dropdown-item" href="{{url_for('core.nature')}}">Nature</a>
-			<div class="dropdown-divider"></div>
-		
 			<a class="dropdown-item" href="{{url_for('core.headphones')}}">Headphones</a>
 			<div class="dropdown-divider"></div>
-
+			
 			<a class="dropdown-item" href="{{url_for('core.technology')}}">Technology</a>
+			<div class="dropdown-divider"></div>
+
+			<a class="dropdown-item" href="{{url_for('core.nature')}}">Nature</a>
 			{% if current_user.is_authenticated %}
 			<div class="dropdown-divider"></div>
 			<a class="dropdown-item" href="{{url_for('core.goat')}}">GOAT</a>
@@ -63,7 +60,8 @@
 		</nav>
 	<div>
 		<!-- Platform box and Summary -->
-		<div class='box'><p>Platforms.</p>
+		<div class='box'><p><!-- Platforms --></p>
+			<br>
 			<a href="https://github.com/andyz123"><button type="button" class="btn btn-outline-dark"><i class="fa">&#xf09b;</i></button></a>
 			<span class='paddingDistance'>
 			<a href="https://www.linkedin.com/in/andy-zheng-5a512614a/"><button type="button" class="btn btn-outline-primary"><i class="fa">&#xf08c;</i></button></a></span>
@@ -71,10 +69,10 @@
 			<a href="mailto:andy@andyzhengblog.com"><button type="button" class="btn btn-outline-dark"><i class="fa">&#xf0e0;</i></button></a></span>
 		</div>
 		<div>
-			<h2 class='portfolioHeadingsAlt'>Hello.</h2>
-		<p class='summary'>I'm a Software Engineer/Developer from New York City, NY. I graduated from Stony Brook University in 2017. I love coding, design, games and basketball. Available for freelance work.</p>
+			<h2 class='portfolioHeadingsAlt'>Hi.</h2>
+		<p class='summary'>I'm a Software Engineer/Developer from New York City, NY. I graduated from Stony Brook University in 2017. I love coding, design, games and basketball. Available for freelance. 👍</p>
 		</div>
-		<hr>
+		<hr class='portfolioSeparate'>
 		<!-- Skill table -->
 		<div>
 			<h2 class='portfolioHeadingsAlt'>Skills.</h2>
@@ -104,27 +102,28 @@
 			        <tr>
 			          <th>Databases:</th>
 			            <td>MySQL</td>
+			            <td>MongoDB</td>
 			            <td>SQLite</td>
 			        </tr>
 			    </tbody>
 			</table>
 		</div>
 		<br>
-		<hr>
+		<hr class='portfolioSeparate'>
 		<!-- Portfolio Section -->
 	<div>
 		<h2 class='portfolioHeadings'>Portfolio.</h2>
 		<div class='portfolioRow1'>
 			<a href="https://github.com/andyz123/Shopping_List"><img src="static/pics/shoppingList.png" class='shoppingList'></a>
 			<h3 class='portfolioRFont'>Shopping List Web Application</h3>
-			<p class='portfolioOFont'><a href="https://andyshoppinglist.herokuapp.com/">https://andyshoppinglist.herokuapp.com/.</a></p>
+			<p class='portfolioOFont'><a href="https://andyshoppinglist.herokuapp.com/" id='link'>https://andyshoppinglist.herokuapp.com/.</a></p>
 			<p class='portfolioOFont'>This is a shopping list application for people who likes planning and prefer to take their lists on the go. This application features a cloud database, implemented using MongoDB, allowing users to access the list anywhere internet is present. Users may add an item by name, quantity, and price per item. Additionally, users may check the boxes next to the item to cross an item out. It does not end there. Users can delete items from the list altogether by pressing the minus button while items are crossed out. At the bottom displays the total price that the user should expect to spend.</p>
 		</div>
 
 		<div class='portfolioRow2'>
 			<a href="https://github.com/andyz123/PyGameBlackJack"><img src="static/pics/drawing.png" class='blackjack'></a>
 			<h3 class='portfolioRFont'>Blackjack in Pygame</h3>
-			<p class='portfolioOFont'>This is the classic Blackjack game developed using the Pygame library. Originally, I wrote a Blackjack game that is played purely in the terminal. It's still in my GitHub repository. However, this application is played in the Pygame client with images, a much better experience overall. Players are given 100 chips to begin, and will trigger a 'Game Over' if the number of chips reaches 0. Players may bet in amounts of 5, 10, 25, 50, or 100. I really want to go into game mechanics, but I'll need a lot more space for that. Click the image for a more in-depth description! </p>
+			<p class='portfolioOFont'>This is the classic Blackjack game developed using the Pygame library. Originally, I wrote a Blackjack game that is played purely in the terminal. <br>It's still in my GitHub repository. However, this application is played in the Pygame client with images, a much better experience overall. Players are given 100 chips to begin, and will trigger a 'Game Over' if the number of chips reaches 0. Players may bet in amounts of 5, 10, 25, 50, or 100. I really want to go into game mechanics, but I'll need a lot more space for that. Click the image for a more in-depth description! </p>
 		</div>
 
 		<div class='portfolioRow2'>
@@ -139,7 +138,7 @@
 			<p class='portfolioOFont'>This website. There are two main sections: the Blog, and the Portfolio. There are also the carousels, but that's mostly fluff. I have actually implemented and tried using a couple of different cloud databases with the blog, MySQL and PostgreSQL for example. However, the free versions causes the site to time-out very often. Thus, I decided to just go with a local SQLite database, but kept basic functionalities such as creating new posts and registering. I can still post, and visitors can still browse. For the portfolio section, I tried my best to make everything look nice and orderly. That was the design philosphy.</p>
 		</div>
 	</div>
-	<hr>
+	<hr class='portfolioSeparate'>
 	<!-- About Me/This project -->
 	<div>
 		<h2 class='portfolioHeadingsAlt'>About.</h2>
@@ -150,7 +149,7 @@
 		<p>I didn't have a preference. However, Flask is the better choice for what I wanted to do. So I went with Flask and this is my work.</p>
 		</div>
 	</div>
-	<hr>
+	<hr class='portfolioSeparate'>
 	<!-- Contact -->
 	<div>
 		<h2 class='portfolioHeadingsAlt'>Contact.</h2>
@@ -167,7 +166,7 @@
 		
 	</div>
 	
-	<footer id='portfolioFooter'>
+	<footer id='portfolioEnding'>
 		<!-- <p align="center" style="font-size: 1vw; font-family: 'Garamond';">© Andy Zheng 2019</p> -->
 	</footer>
 </body>

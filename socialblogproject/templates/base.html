@@ -32,16 +32,13 @@
           Carousel
         </a>
         <div class="dropdown-menu" aria-labelledby="carousel">
-			<a class="dropdown-item" href="{{url_for('core.animals')}}">Animals</a>
-			<div class="dropdown-divider"></div>
-		
-			<a class="dropdown-item" href="{{url_for('core.nature')}}">Nature</a>
-			<div class="dropdown-divider"></div>
-		
 			<a class="dropdown-item" href="{{url_for('core.headphones')}}">Headphones</a>
 			<div class="dropdown-divider"></div>
-
+			
 			<a class="dropdown-item" href="{{url_for('core.technology')}}">Technology</a>
+			<div class="dropdown-divider"></div>
+
+			<a class="dropdown-item" href="{{url_for('core.nature')}}">Nature</a>
 			{% if current_user.is_authenticated %}
 			<div class="dropdown-divider"></div>
 			<a class="dropdown-item" href="{{url_for('core.goat')}}">GOAT</a>
