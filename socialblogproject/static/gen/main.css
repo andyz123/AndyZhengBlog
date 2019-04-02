@@ -6,11 +6,20 @@
     background-image: linear-gradient(to bottom right, white, black);
 }
 
-#blogFooter {
-    text-align: center;
-    color: rgba(248, 247, 246, 0.8);
-    font-size: 1vw;
-    font-family: 'Garamond';
+#blogGradient {
+	background-image: -webkit-linear-gradient(65deg, #71c9ce 50%, #e3fdfd 50%);
+	height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#blogGradientMain {
+	background-image: -webkit-linear-gradient(60deg, #393e46 50%, #EAf6f6 50%);
+    background-size: cover;
+    background-position: center;
+    padding-bottom:5px;
 }
 
 #blogJumbo {
@@ -28,17 +37,22 @@
 
 }
 
-#blogJumboText {
+#blogJumboTextRoboto {
     padding-top: 150px;
     color: rgba(248, 247, 246, 0.9);
-    font-family: 'Garamond';
+    font-family: 'Roboto', sans-serif;
+}
+
+#blogJumboTextOswald {
+    color: rgba(248, 247, 246, 0.9);
+    font-family: 'Oswald', sans-serif;
 }
 
 #blogJumboPage {
     font-size: 3vh;
     font-weight: bold;
     line-height: 2;
-    padding-top: 30px;
+    padding-top: 350px;
 }
 
 #blogJumboArrowDown {
@@ -47,20 +61,55 @@
 }
 
 #blogPostByDate {
-    background-color: #C9E2E0;
-    text-align: center;
+    background-color: #a6e3e9;
+    width:85%;
+    box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
+    margin-bottom:30px;
+}
+
+#blogPostOuter {
+	background-color: #a6e3e9;
+}
+
+#blogPostOuterAlt {
+	background-color: #00adb5;
+}
+
+#blogPostInner {
+	background-color: #cbf1f5;
+	font-family: 'Oswald', sans-serif;
 }
 
 #carouselPics {
     height: 680px;
 }
 
-#fontGaramond {
-    font-family: garamond;
+#fontOswald {
+    font-family: 'Oswald', sans-serif;
+}
+
+#fontRoboto {
+	color:black;
+	font-family: 'Roboto', sans-serif;
+}
+
+#fontRobotoAlt{
+	color:white;
+	font-family: 'Roboto', sans-serif;
 }
 
 #index {
 	width:2%;
+	-webkit-animation: fadein 8s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 8s; /* Firefox < 16 */
+        -ms-animation: fadein 8s; /* Internet Explorer */
+         -o-animation: fadein 8s; /* Opera < 12.1 */
+            animation: fadein 8s;
+}
+
+#indexAlt {
+	width: 2%;
 }
 
 #indexBackground {
@@ -76,6 +125,35 @@
     background-attachment: fixed;
 }
 
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
 #formsButtonMargin {
 	margin-bottom: 5px;
 }
@@ -83,14 +161,28 @@
 #formsGradient {
 	height: 100vh;
     width: 100%;
-    background-image: -webkit-linear-gradient(65deg, #71c9ce 50%, #e3fdfd 50%);
+    background-image: -webkit-linear-gradient(65deg, #222831 50%, #eeeeee 50%);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
 
-#portfolioBody {
-    background-image: linear-gradient(to bottom right, #ffffff, gray);
+#postGradient {
+	height: 100vh;
+    width: 100%;
+    background-image: -webkit-linear-gradient(65deg, #222831 50%, #EAF6F6 50%);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.accountProfile {
+	font-size: inherit;
+    padding: 0.2em 0 0.2em 0.2em;
+    margin: 0.1em;
+    -moz-box-sizing: content-box; 
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;*/
 }
 
 .blackFont {
@@ -117,10 +209,15 @@
 
 .indexWelcome1 {
     color: rgba(234, 230, 230, 0.8);
-    padding-top: 100px;
+    padding-top: 150px;
     font-size: 5rem;
     font-family: 'Roboto', sans-serif;
     text-align: center;
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s;
 }
 
 .indexWelcome2 {
@@ -128,10 +225,15 @@
     padding-top: 50px;
     font-family: 'Oswald', sans-serif;
     text-align: center;
+    -webkit-animation: fadein 5s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 5s; /* Firefox < 16 */
+        -ms-animation: fadein 5s; /* Internet Explorer */
+         -o-animation: fadein 5s; /* Opera < 12.1 */
+            animation: fadein 5s;
 }
 
 .navbarDivider {
-    padding-top: 65px;
+    padding-top: 64px;
 }
 
 .navbarFormsDivider {
@@ -143,30 +245,20 @@
 }
 
 .postColor {
-    background-color: #DAE9E4;
+	color:white;
+    background-color: #393e46;
+    box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
 }
 
-
-
-/*.a:hover {
-    position: relative;
+.postPadding {
+	padding-bottom: 20px;
 }
-*/
-/*.a:hover:after {
-	content: url("/static/pics/portfolioBG.jpg"); 
-	display: block;
-    position: absolute;
-    top:0;
-    left:0;
-}*/
 
-/*header.indexWelcome1:hover{
-    background-image: url("/static/pics/goat4.jpg");
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}*/
+.postSize {
+	background-color: #f9f7f7;
+	width: 75%;
+	margin: 0 auto;
+}
 body.portfolio {
     margin: 0 auto;
 }

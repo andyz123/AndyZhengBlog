@@ -25,9 +25,9 @@ def technology():
 def headphones():
 	return render_template('headphones.html')
 
-@core.route('/animals')
-def animals():
-	return render_template('animals.html')
+@core.route('/extras')
+def extras():
+	return render_template('extras.html')
 
 @core.route('/nature')
 def nature():

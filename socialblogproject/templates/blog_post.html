@@ -1,30 +1,26 @@
 {% extends 'base.html' %}
 {% block content %}
-<body id='blackGradient'>
+<div id='postGradient' class='navbarRegisterDivider'>
 	
 
-	<div align="center">
-		<div class="card text-center" id = 'limeGradient' >
-		<div class="card-header">
-		<div class="card-body" >
-		<h1><strong>{{post.title.upper()}}</strong></h1>
-		Written by:  <a href="{{url_for('users.user_posts', username = post.author.username)}}"><i>{{post.author.username.upper()}}</i>
-		</a>
-		<h6>Published: {{post.date.strftime('%B %d, %Y')}}</h6>
-		<br><br>
-		<h4>{{post.text}}</h4>
-		<br><br>
-		{% if post.author == current_user or current_user.id == 1 %}
-		<div>
-			<a href="{{url_for('blog_posts.update',blog_post_id = post.id)}}" class="btn btn-primary" role='button'>Update</a>
-			<button type = 'button' class='btn btn-danger' data-toggle='modal' data-target = '#delete_modal'>Delete</button>
-		</div>
+<div class="card text-center postSize">
+	<div class="card-body" id='fontOswald'>
+	<h1 id='fontRoboto'><strong>{{post.title.upper()}}</strong></h1>
+	Written by:  <a href="{{url_for('users.user_posts', username = post.author.username)}}"><i>{{post.author.username.upper()}}</i>
+	</a>
+	<h6>Published: {{post.date.strftime('%B %d, %Y')}}</h6>
+	<br><br>
+	<h4 class='text-left'>{{post.text}}</h4>
+	<br><br>
+	{% if post.author == current_user or current_user.id == 1 %}
+	<div>
+		<a href="{{url_for('blog_posts.update',blog_post_id = post.id)}}" class="btn btn-primary" role='button'>Update</a>
+		<button type = 'button' class='btn btn-danger' data-toggle='modal' data-target = '#delete_modal'>Delete</button>
 	</div>
-</div>
-</div>
-		{% endif %}
-		
 	</div>
+	{% endif %}
+</div>
+
 <div class="modal" tabindex="-1" role="dialog" id='delete_modal'>
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -44,11 +40,14 @@
 			<input class = 'btn btn-danger' type="submit" value='Yes, delete this post'>
 			
 		</form>
-
-        
       </div>
     </div>
   </div>
 </div>
 
+</div>
+<footer class='indexFooterText'>
+	<hr class='indexFooter'>
+	&copy Andy Zheng 2019
+</footer>
 {% endblock %}

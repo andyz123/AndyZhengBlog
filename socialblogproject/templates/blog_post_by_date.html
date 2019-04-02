@@ -1,35 +1,38 @@
 {% extends 'base.html' %}
 {% block content %}
-<body id = 'limeGradient'>
+<div class='navbarDivider' id = 'blogGradient'>
 <div align="center">
-	<h1><span class="badge badge-success">Posted on {{post.date.strftime('%B %d, 20%y')}}</span></h1></div>
-
+	<h1><span class="badge badge-success" id='fontOswald'>Posted on {{post.date.strftime('%B %d, 20%y')}}</span></h1></div>
+	<br>
 <div class="container">
 		{% for same_day_posts in blog_posts %}
 		{% if same_day_posts.date.strftime('%m-%d-20%y') == post.date.strftime('%m-%d-20%y') %}
-		<div class="jumbotron border border-primary " id = 'blogPostByDate'>
-		<div class="card text-center border border-primary" >
-			<div class="card-header">
-				<h4 id = 'fontGaramond'><a class="card-title" href="{{url_for('blog_posts.blog_post', blog_post_id = post.id)}}">{{post.title}}</a></h4> 
-			</div>
-			<div class="card-body" >
+		<div class="card text-center postSize" >
+			 <div class="card-header" id='blogPostOuter'>
+    			<h4><a class="card-title" id = 'fontRoboto' href="{{url_for('blog_posts.blog_post', blog_post_id = post.id)}}">{{post.title}}</a></h4> 
+    			
+  			</div>
+			<div class="card-body" id='fontOswald'>
 				Written by: <a href="{{url_for('users.user_posts', username = post.author.username)}}">{{post.author.username.upper()}}</a>
 				<h6>Published on: <a href="{{url_for('blog_posts.blog_post_by_date', blog_post_id = post.id, blog_date = post.date.strftime('%m-%d-20%y'))}}">{{post.date.strftime('%m-%d-20%y')}}</a></h6>
 				<br>
 				{% if post.text|length > 50 %}
-				<h4 id = 'fontGaramond'>{{post.text[:50]}} ...</h4>
+				<h4 class='postPadding'>{{post.text[:50]}} ...</h4>
 				<a class = 'btn btn-primary' href="{{url_for('blog_posts.blog_post', blog_post_id = post.id)}}">Continue reading →</a>
 				{% else %}
-				<h4 id = 'fontGaramond'>{{post.text}}</h4>
+				<h4 class='postPadding'>{{post.text}}</h4>
 				<a class = 'btn btn-primary' href="{{url_for('blog_posts.blog_post', blog_post_id = post.id)}}">Read →</a>
 				{% endif %}
-		</div>
 			</div>
 		</div>
+		<br>
 		{% endif %}
 		{% endfor %}
 	
 </div>
-
-
+</div>
+<footer class='indexFooterText'>
+	<hr class='indexFooter'>
+	&copy Andy Zheng 2019
+</footer>
 {% endblock %}

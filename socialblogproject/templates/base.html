@@ -10,7 +10,7 @@
 	{% endassets %}
 	<link rel="shortcut icon" href="{{ url_for('static', filename='pics/faviconandy.ico') }}">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
-	<title>Andy Zheng | Software Engineer</title>
+	<title>Andy Zheng | Software Developer</title>
 </head>
 <body>
 	<nav class="navbar fixed-top navbar-light"  id="baseNavbar">
@@ -39,6 +39,9 @@
 			<div class="dropdown-divider"></div>
 
 			<a class="dropdown-item" href="{{url_for('core.nature')}}">Nature</a>
+			<div class="dropdown-divider"></div>
+
+			<a class="dropdown-item" href="{{url_for('core.extras')}}">Extras</a>
 			{% if current_user.is_authenticated %}
 			<div class="dropdown-divider"></div>
 			<a class="dropdown-item" href="{{url_for('core.goat')}}">GOAT</a>
@@ -68,7 +71,6 @@
 			<div class="dropdown-divider"></div>
 		
 			<a class="dropdown-item" href="{{url_for('users.register')}}">Register</a>
-			
 		
 		{% endif %}
 		

@@ -52,6 +52,9 @@
 			<div class="dropdown-divider"></div>
 
 			<a class="dropdown-item" href="{{url_for('core.nature')}}">Nature</a>
+			<div class="dropdown-divider"></div>
+
+			<a class="dropdown-item" href="{{url_for('core.extras')}}">Extras</a>
 			{% if current_user.is_authenticated %}
 			<div class="dropdown-divider"></div>
 			<a class="dropdown-item" href="{{url_for('core.goat')}}">GOAT</a>
