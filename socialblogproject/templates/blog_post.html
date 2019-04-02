@@ -1,8 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
-<div id='postGradient' class='navbarRegisterDivider'>
+<div id='postGradient' class='navbarFormsDivider'>
 	
-
 <div class="card text-center postSize">
 	<div class="card-body" id='fontOswald'>
 	<h1 id='fontRoboto'><strong>{{post.title.upper()}}</strong></h1>
@@ -38,13 +37,12 @@
 
 		<form action="{{url_for('blog_posts.delete_post', blog_post_id = post.id)}}" method="POST">
 			<input class = 'btn btn-danger' type="submit" value='Yes, delete this post'>
-			
 		</form>
       </div>
     </div>
   </div>
 </div>
-
+</div>
 </div>
 <footer class='indexFooterText'>
 	<hr class='indexFooter'>
