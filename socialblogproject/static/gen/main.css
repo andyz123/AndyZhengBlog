@@ -1,9 +1,5 @@
 #baseNavbar {
-    background: rgba(234, 230, 230, 0.3);
-}
-
-#blackGradient {
-    background-image: linear-gradient(to bottom right, white, black);
+    background: rgba(234, 230, 230, 0.6);
 }
 
 #blogGradient {
