@@ -40,7 +40,8 @@
 		<li class ='nav-link'>
 			<a href="{{url_for('core.about')}}" id='link'>Portfolio</a>
 		</li>
-		<li class="nav-item dropdown">
+
+		<!-- <li class="nav-item dropdown">
 		<a class="nav-link dropdown-toggle blackFont" href="#" id="carousel" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <span id='link'>Carousel</span>
         </a>
@@ -58,7 +59,33 @@
 			{% if current_user.is_authenticated %}
 			<div class="dropdown-divider"></div>
 			<a class="dropdown-item" href="{{url_for('core.goat')}}">GOAT</a>
-			{% endif %}
+			{% endif %} -->
+			{% if current_user.is_authenticated %}
+		<li class= 'nav-link'>
+			<a href="{{url_for('blog_posts.create_post')}}" class='blackFont'>Create Post</a>
+		</li>
+		<li class="nav-item dropdown ">
+        <a class="nav-link dropdown-toggle blackFont" href="#" id="account" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Account (<i>Hello, {{current_user.username}}!</i>)</a>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="account">
+			<a class="dropdown-item" href="{{url_for('users.account')}}">Account Settings</a>
+			<div class="dropdown-divider"></div>
+		
+			<a class="dropdown-item" href="{{url_for('users.logout')}}">Sign Out</a>
+
+		{% else %}
+		<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle blackFont" href="#" id="signin" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Sign In
+        </a>
+        <div class="dropdown-menu" aria-labelledby="signin">
+			<a class="dropdown-item" href="{{url_for('users.login')}}">Sign In</a>
+			<div class="dropdown-divider"></div>
+		
+			<a class="dropdown-item" href="{{url_for('users.register')}}">Register</a>
+		
+		{% endif %}
 		</ul>
 		</nav>
 	<div>

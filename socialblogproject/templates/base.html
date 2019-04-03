@@ -19,7 +19,7 @@
 				<button type="button" class="btn btn-outline-dark">
 				<img src="/static/pics/home.png" width="30" height="30" class="d-inline-block align-top"></button></a>
 		</li>
-		<ul class="nav justify-content-end">
+		<ul class="nav justify-content-end" id='navbarPadding'>
 		<li class ='nav-link py-0'>
 			<a href="{{url_for('core.blog')}}" class='blackFont'>Blog</a>
 		</li>
@@ -27,7 +27,7 @@
 			<a href="{{url_for('core.about')}}" class='blackFont'>Portfolio</a>
 		</li>
 
-		<li class="nav-item dropdown">
+		<!-- <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle blackFont py-0" href="#" id="carousel" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
           Carousel
         </a>
@@ -45,7 +45,7 @@
 			{% if current_user.is_authenticated %}
 			<div class="dropdown-divider"></div>
 			<a class="dropdown-item" href="{{url_for('core.goat')}}">GOAT</a>
-			{% endif %}
+			{% endif %} -->
 			
 		{% if current_user.is_authenticated %}
 		<li class= 'nav-link py-0'>
