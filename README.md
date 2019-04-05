@@ -5,4 +5,4 @@ This is a fullstack website developed using the Flask framework and deployed und
 - Blog
 - Portfolio page
 
-I'm not sure what to put here since it's a personal website which hosts my blog and portfolio page. However, I spent a lot of time on the design as well, so please visit. Thanks!
+I'm not sure what to put here since it's a personal website which hosts my blog and portfolio page. However, a lot of work was also done on the design.
