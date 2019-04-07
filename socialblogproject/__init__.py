@@ -10,7 +10,7 @@ assets = Environment(app)
 
 css = Bundle('styles/styles.css', 'styles/portfolioStyles.css', output = 'gen/main.css')
 assets.register('main_css', css)
-app.config['SECRET_KEY'] = 'secretkey'
+app.config['SECRET_KEY'] = '*********'
 basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'data.sqlite')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] =False
